@@ -2,8 +2,11 @@ import React, { Component } from "react";
 
 import { withRouter, Link } from "react-router-dom";
 import axios from "axios";
-
-if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+if (
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1" ||
+  window.location.hostname === ""
+) {
   axios.defaults.baseURL = "http://localhost:9090";
 } else {
   axios.defaults.baseURL = "http://192.168.99.100";
