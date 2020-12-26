@@ -23,7 +23,7 @@ jobs:
           go-version: ${{ matrix.go }}
       - run: |
           cd backend
-          go run test
+          go test
      
   build:
 
