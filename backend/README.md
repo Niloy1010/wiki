@@ -13,6 +13,11 @@ This will start the backend server
 Your server is ready. Go to
 [http://localhost:9090](http://localhost:9090) to see it in action
 
+
+### `go build main.go`
+
+This will create an executable to run the backend server
+
 ### `go test`
 
 Launches the test runner in the interactive watch mode.
