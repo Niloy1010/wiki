@@ -40,5 +40,5 @@
     ]
   },
   "proxy": "http://localhost:9090",
-  "optionalDependencies": []
+  "optionalDependencies": {}
 }
