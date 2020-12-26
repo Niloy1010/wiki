@@ -1,0 +1,43 @@
+{
+  "name": "wiki_react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1",
+    "axios-https-proxy-fix": "^0.17.1",
+    "concurrently": "^5.3.0",
+    "https-proxy-agent": "^2.2.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-markdown": "^5.0.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "wiki": "concurrently \"npm run start\" \"npm run backend\" ",
+    "test": "jest",
+    "eject": "react-scripts eject",
+    "backend": "cd backend && go run main.go",
+    "build": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:9090"
+}

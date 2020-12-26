@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  reverse-proxy:
+    container_name: reverse_proxy
+    build: ./reverse_proxy
+    depends_on:
+      - app-frontend
+      - app-backend
+    ports:
+      - 80:80
+    restart: on-failure
+
+  app-frontend:
+    image: app-frontend
+    container_name: app-frontend
+    restart: on-failure
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - app-backend
+  app-backend:
+    image: app-backend
+    container_name: app-backend
+    restart: on-failure
+    build: ./backend
+    ports:
+      - 9090:9090
