@@ -42,6 +42,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
       env:
         process.env.CI: false
-    - run: npm i --no-optional --no-shrinkwrap --no-package-lock
+    - run: npm i 
     - run: npm run test
-    - run: npm run build
+    - run: CI=false npm run build
