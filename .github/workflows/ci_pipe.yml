@@ -14,10 +14,10 @@ jobs:
     strategy:
       matrix:
         go: [ '1.14' ]
-    name: Go ${{ matrix.go }} sample
+    name: Go ${{ matrix.go }}
     steps:
       - uses: actions/checkout@v2
-      - name: Setup go
+      - name: Setup build and run go
         uses: actions/setup-go@v1
         with:
           go-version: ${{ matrix.go }}
@@ -40,6 +40,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i
+    - run: npm ci
     - run: npm run build
     - run: npm run test
