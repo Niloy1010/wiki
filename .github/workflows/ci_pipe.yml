@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-16.04
     strategy:
       matrix:
-        go: [ '1.14', '1.13' ]
+        go: [ '1.14' ]
     name: Go ${{ matrix.go }} sample
     steps:
       - uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
           go-version: ${{ matrix.go }}
       - run: |
           cd backend
-          go run main.go
+          go build
           go test
      
   build:
@@ -41,4 +41,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm i
+    - run: npm run build
     - run: npm run test
