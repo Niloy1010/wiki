@@ -44,4 +44,4 @@ jobs:
         process.env.CI: false
     - run: npm i
     - run: npm run test
-    - run: npm run build
+    - run: CI=false npm run build
