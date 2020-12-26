@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
+
 import { Link } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
+
 import { getArticles } from "../../http";
 
 export default class Home extends Component {

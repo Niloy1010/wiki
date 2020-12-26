@@ -20,7 +20,6 @@ class EditArticle extends Component {
     axios
       .get(`/articles/${this.props.match.params.name}`)
       .then((res) => {
-        let data = res.data ? res.data : "";
         this.setState({
           name: this.props.match.params.name,
           content: res.data,
@@ -46,7 +45,7 @@ class EditArticle extends Component {
     });
   };
   saveArticle = () => {
-    if (this.state.content != "") {
+    if (this.state.content !== "") {
       axios
         .put(`/articles/${this.state.name}`, this.state.content)
         .then((res) =>
