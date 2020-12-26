@@ -9,6 +9,22 @@ on:
 
 
 jobs:
+  buildGo:
+    runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        go: [ '1.14', '1.13' ]
+    name: Go ${{ matrix.go }} sample
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup go
+        uses: actions/setup-go@v1
+        with:
+          go-version: ${{ matrix.go }}
+      - run: |
+          cd backend
+          go run test
+     
   build:
 
     runs-on: ubuntu-latest
