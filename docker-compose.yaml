@@ -12,7 +12,7 @@ services:
     restart: on-failure
 
   app-frontend:
-    image: app-frontend
+    image: md-wiki:2019
     container_name: app-frontend
     restart: on-failure
     build: .

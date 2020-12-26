@@ -7,7 +7,7 @@ if (
 ) {
   axios.defaults.baseURL = "http://localhost:9090";
 } else {
-  axios.defaults.baseURL = "http://192.168.99.100";
+  axios.defaults.baseURL = `http://${window.location.hostname}`;
 }
 export const getArticles = () => {
   return axios
