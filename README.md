@@ -26,7 +26,4 @@ The whole application can be built with one command using NGINX as reverse proxy
 ## docker-compose up
 This single command will create, build and run the application on http://localhost:8080 on linux machine. 
 If you are using docker toolbox for windows you have to go to nginx.conf file inside reverse proxy folder and change the IP according to your device. (I.E) http://192.168.99.102
-
-
-## docker run -ti -p 8080:8080 md-wiki:2019
-This will run the image on localhost:8080 however the server has to be then run manually.
+Use docker run -ti -p 8080:8080 md-wiki:2019 .This will run the image on localhost:8080 however the server has to be then run manually.
